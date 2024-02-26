@@ -51,6 +51,7 @@ oc get user
 oc get identity
 oc get groups
 oc adm groups new devops developer kubeadmin
+oc adm groups remove-users devops developer kubeadmin
 NAME     USERS
 devops   developer, kubeadmin
 
@@ -69,9 +70,20 @@ oc config view
 oc whoami -c
 microservice/api-crc-testing:6443/kubeadmin
 
-
 oc status
 
+#gather debug information from a pod
+oc adm must-gather
+
+oc adm new-project myproject
+oc edit project microservice
+oc adm node-logs --role master -u kubelet
+oc adm pod-network isolate-projects
+oc adm pod-network isolate-projects microservice
+oc image mirror registry.access.redhat.com/ubi8/ubi:latest=default-route-openshift-image-registry.apps-crc.testing/demo/ubi8:latest --insecure=true --filter-by-os=linux/amd64
+
+#cluster operators kubeadmin
+oc get co
 What is odo?
 
 
