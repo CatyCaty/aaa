@@ -25,6 +25,59 @@ oc login -u user1
 oc new-project microservice
 oc new-app https://github.com/sclorg/cakephp-ex
 
+oc get pods -o wide
+NAME                          READY   STATUS      RESTARTS   AGE     IP             NODE                 NOMINATED NODE   READINESS GATES
+cakephp-ex-1-build            0/1     Completed   0          2m18s   10.217.0.141   crc-ksq4m-master-0   <none>           <none>
+cakephp-ex-787d4788fb-4lc7h   0/1     Pending     0          76s     <none>         <none>               <none>           <none>
+
+oc logs cakephp-ex-787d4788fb-4lc7h
+oc logs cakephp-ex-1-build
+
+oc project
+
+oc whoami
+
+oc status
+
+oc api-resources
+
+oc help
+
+oc create --help
+
+oc explain pods
+
+oc get user
+oc get identity
+oc get groups
+oc adm groups new devops developer kubeadmin
+NAME     USERS
+devops   developer, kubeadmin
+
+oc describe user
+oc describe group
+oc delete user frank
+
+oc delete identity ....
+oc logout
+
+!oc completion bash > oc_bash_completion
+oc edit project microservice
+"cluster entry
+oc config view
+
+oc whoami -c
+microservice/api-crc-testing:6443/kubeadmin
+
+
+oc status
+
+What is odo?
+
+
+
+
+
 
 
 
