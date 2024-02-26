@@ -20,6 +20,12 @@ Pipelines - develop, build, test, deploy
 Registry - verwaltet Docker images
 Software defined network - networking capabilities out of the box
 
+https://console.redhat.com/openshift/sandbox
+oc login -u user1
+oc new-project microservice
+oc new-app https://github.com/sclorg/cakephp-ex
+
+
 
 
 
