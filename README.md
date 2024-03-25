@@ -86,6 +86,53 @@ oc image mirror registry.access.redhat.com/ubi8/ubi:latest=default-route-openshi
 oc get co
 What is odo?
 
+#Docker
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meine Docker-Seite</title>
+</head>
+<body>
+    <h1>Willkommen auf meiner Docker-Seite!</h1>
+</body>
+</html>
+
+
+#Dockerfile
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+
+docker build -t my-docker-page .
+
+
+#docker-compose.yml
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: my_password
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+#
+docker volume create mysql_data
+
+#
+docker run -d -p 3306:3306 -v mysql_data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root_password mysql:5.7
+
+
+
+
 
 
 
