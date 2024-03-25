@@ -162,6 +162,14 @@ localhost:3001
 #publish your image
 rename the image
 docker tag docker/docker-dotnet-sample-server robixondocker/docker-dotnet-sample-server
+docker push robixondocker/docker-dotnet-sample-server
+
+#publish 
+docker run -it --rm -p 8000:8080 --name aspnetcore_sample mcr.microsoft.com/dotnet/samples:aspnetapp
+docker tag mcr.microsoft.com/dotnet/samples robixondocker/mcr.microsoft.com/dotnet/samples
+
+
+
 
 
 
