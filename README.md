@@ -33,7 +33,7 @@ cakephp-ex-787d4788fb-4lc7h   0/1     Pending     0          76s     <none>     
 oc logs cakephp-ex-787d4788fb-4lc7h
 oc logs cakephp-ex-1-build
 
-oc project
+oc project --- Using project "crt-redhatdevrob-dev" from context named "crt-redhatdevrob-context" on server "https://172.30.0.1:443".
 
 oc whoami
 
@@ -130,6 +130,12 @@ docker volume create mysql_data
 #
 docker run -d -p 3306:3306 -v mysql_data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root_password mysql:5.7
 
+
+#
+https://github.com/docker/multi-container-app
+git clone https://github.com/docker/multi-container-app
+docker compose up -d
+http://localhost:3000/
 
 
 
