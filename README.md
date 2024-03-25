@@ -136,6 +136,40 @@ https://github.com/docker/multi-container-app
 git clone https://github.com/docker/multi-container-app
 docker compose up -d
 http://localhost:3000/
+docker compose watch
+delete
+#
+git clone https://github.com/docker/multi-container-app
+todo-database:
+    # ...
+    volumes:
+      - database:/data/db
+                      
+# ...
+volumes:
+  database:
+
+#
+git clone https://github.com/docker/bindmount-apps
+todo-app:
+    # ...
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+docker compose up -d
+localhost:3001
+
+#publish your image
+rename the image
+docker tag docker/docker-dotnet-sample-server robixondocker/docker-dotnet-sample-server
+
+
+
+
+
+
+
+  
 
 
 
