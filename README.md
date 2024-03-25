@@ -166,7 +166,11 @@ docker push robixondocker/docker-dotnet-sample-server
 
 #publish 
 docker run -it --rm -p 8000:8080 --name aspnetcore_sample mcr.microsoft.com/dotnet/samples:aspnetapp
-docker tag mcr.microsoft.com/dotnet/samples robixondocker/mcr.microsoft.com/dotnet/samples
+docker tag mcr.microsoft.com/dotnet/samples robixondocker/mcr.microsoft.com/dotnet/sample
+
+#openshift
+git clone https://github.com/docker/multi-container-app
+
 
 
 
